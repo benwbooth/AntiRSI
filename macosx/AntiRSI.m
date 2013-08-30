@@ -159,7 +159,6 @@ static void handle_status_update(void * data) {
     [main_window setOpaque:NO];
     [main_window setHasShadow:NO];
     [main_window setMovableByWindowBackground:YES];
-    [main_window center];
     [main_window setContentView:view];
     [main_window setCollectionBehavior:NSWindowCollectionBehaviorCanJoinAllSpaces];
 
@@ -313,7 +312,8 @@ static void handle_status_update(void * data) {
 
 // center and make appear the break window
 - (void)orderInBreakWindow {
-    [main_window center];
+    [main_window setFrameOrigin:
+     NSMakePoint((main_window.screen.frame.size.width/2)-(main_window.frame.size.width/2),20)];
     [main_window orderFrontRegardless];
     [main_window setAlphaValue:0.0];
     [[main_window animator] setAlphaValue:1.0];

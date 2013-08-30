@@ -19,8 +19,7 @@
     int midY = NSMidY(bgRect);
     int maxY = NSMaxY(bgRect);
 
-    // correct value to duplicate Panther's App Switcher
-    float radius = 25.0;
+    float radius = 10.0;
 
     NSBezierPath *bgPath = [NSBezierPath bezierPath];
 
